@@ -71,7 +71,10 @@ def completion():
     # 处理输入
     result = generate(input_str)
     # 返回处理后的结果
-    return jsonify({'Result': result})
+    # return jsonify({'Result': result})
+	# 解码为字符串
+    output = tokenizer.decode(result_ids[0], skip_special_tokens=True)
+    return jsonify({'result': output})
 
 if __name__ == '__main__':
     app.run(debug=True, port=1234, threaded=True)
