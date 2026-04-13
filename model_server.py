@@ -30,7 +30,7 @@ def tokenize(text):
     result = tokenizer(
         text,
         truncation=True,
-        max_length=128,
+        max_length=2048,
         padding=False,
         return_tensors="pt",
         )
@@ -38,11 +38,14 @@ def tokenize(text):
 
 def generate(
         text: str,
-        max_tokens: int = 128,
-        temperature: float = 0.8,
+        max_tokens: int = 512,
+        temperature: float = 0.6,
         ):
     generation_config = GenerationConfig(
             temperature=temperature,
+            do_sample=True,
+            top_p=0.95,
+            repetition_penalty=1.1,
             eos_token_id=2,
             pad_token_id=0,
             )
