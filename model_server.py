@@ -152,5 +152,33 @@ def completion():
             "files": []
         }), 200
 
+def start_cloudflare_tunnel(port: int) -> None:
+    """Start a cloudflared tunnel and print the public URL."""
+    import shutil
+    import subprocess
+    import threading
+    import re
+
+    if not shutil.which("cloudflared"):
+        print("[tunnel] cloudflared not found, skipping tunnel. Install with: pip install cloudflared")
+        return
+
+    def _run():
+        proc = subprocess.Popen(
+            ["cloudflared", "tunnel", "--url", f"http://localhost:{port}"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+        )
+        for line in proc.stdout:
+            print(f"[tunnel] {line}", end="")
+            match = re.search(r"https://[a-zA-Z0-9-]+\.trycloudflare\.com", line)
+            if match:
+                print(f"\n[tunnel] Public URL: {match.group(0)}/generation\n")
+
+    threading.Thread(target=_run, daemon=True).start()
+
+
 if __name__ == '__main__':
+    start_cloudflare_tunnel(1234)
     app.run(debug=False, port=1234, threaded=True)
