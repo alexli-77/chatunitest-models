@@ -1,9 +1,19 @@
 from flask import Flask, request, jsonify
 import torch
+import time
 from transformers import LlamaForCausalLM, AutoTokenizer, GenerationConfig, BitsAndBytesConfig
 from peft import PeftModel
 
 app = Flask(__name__)
+
+# Global stats
+stats = {
+    "total_requests": 0,
+    "success_count": 0,
+    "error_count": 0,
+    "total_inference_time_ms": 0.0,
+    "total_tokens_generated": 0,
+}
 
 device = "cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu")
 BASE_MODEL = "codellama/CodeLlama-7b-Instruct-hf"
@@ -62,9 +72,26 @@ def generate(
                 )
     return result
 
+@app.route('/stats', methods=['GET'])
+def get_stats():
+    total = stats["success_count"] + stats["error_count"]
+    avg_ms = (
+        stats["total_inference_time_ms"] / stats["success_count"]
+        if stats["success_count"] > 0 else 0
+    )
+    return jsonify({
+        "total_requests": total,
+        "success_count": stats["success_count"],
+        "error_count": stats["error_count"],
+        "avg_inference_time_ms": round(avg_ms, 1),
+        "total_tokens_generated": stats["total_tokens_generated"],
+    })
+
+
 @app.route('/generation', methods=['POST'])
 def completion():
     data = request.get_json(silent=True) or {}
+    stats["total_requests"] += 1
 
     try:
         # old protocol：input
@@ -86,15 +113,29 @@ def completion():
                 f"runtimeFacts:\n{runtime_facts}\n"
             )
 
+        input_ids = tokenizer(prompt, return_tensors="pt")["input_ids"]
+        input_tokens = input_ids.shape[1]
+
+        t_start = time.time()
         output_ids = generate(prompt)
-        # Decode only the newly generated tokens (skip the input prompt)
-        input_len = tokenizer(prompt, return_tensors="pt")["input_ids"].shape[1]
-        generated_ids = output_ids[0][input_len:]
+        inference_time_ms = (time.time() - t_start) * 1000
+
+        generated_ids = output_ids[0][input_tokens:]
+        output_tokens = len(generated_ids)
         result = tokenizer.decode(generated_ids, skip_special_tokens=True)
+
+        stats["success_count"] += 1
+        stats["total_inference_time_ms"] += inference_time_ms
+        stats["total_tokens_generated"] += output_tokens
 
         return jsonify({
             "success": True,
             "message": "ok",
+            "stats": {
+                "inference_time_ms": round(inference_time_ms, 1),
+                "input_tokens": input_tokens,
+                "output_tokens": output_tokens,
+            },
             "files": [
                 {
                     "relativePath": "se/kth/castor/generated/HybridRockyTest.java",
@@ -104,6 +145,7 @@ def completion():
         }), 200
 
     except Exception as e:
+        stats["error_count"] += 1
         return jsonify({
             "success": False,
             "message": str(e),
