@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import torch
-from transformers import LlamaForCausalLM, AutoTokenizer, GenerationConfig
+from transformers import LlamaForCausalLM, AutoTokenizer, GenerationConfig, BitsAndBytesConfig
 from peft import PeftModel
 
 app = Flask(__name__)
@@ -10,16 +10,22 @@ BASE_MODEL = "codellama/CodeLlama-7b-Instruct-hf"
 
 tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL)
 
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.float16,
+)
+
 model = LlamaForCausalLM.from_pretrained(
     BASE_MODEL,
-    torch_dtype=torch.float16,
+    quantization_config=bnb_config,
     device_map="auto",
 )
 
 model = PeftModel.from_pretrained(
     model,
     "Leon-20292783/my-testgen-lora",
-    torch_dtype=torch.float16,
 )
 
 model.eval()
@@ -36,13 +42,12 @@ def tokenize(text):
 
 def generate(
         text: str,
-        max_tokens: int = 512,
+        max_tokens: int = 256,
         temperature: float = 0.6,
         ):
     generation_config = GenerationConfig(
             temperature=temperature,
-            do_sample=True,
-            top_p=0.95,
+            do_sample=False,       # greedy decoding: faster + more deterministic
             repetition_penalty=1.1,
             eos_token_id=2,
             pad_token_id=0,
@@ -81,10 +86,12 @@ def completion():
                 f"runtimeFacts:\n{runtime_facts}\n"
             )
 
-        result = generate(prompt)
+        output_ids = generate(prompt)
+        # Decode only the newly generated tokens (skip the input prompt)
+        input_len = tokenizer(prompt, return_tensors="pt")["input_ids"].shape[1]
+        generated_ids = output_ids[0][input_len:]
+        result = tokenizer.decode(generated_ids, skip_special_tokens=True)
 
-        # 统一返回 Java 客户端期望结构
-        # 这里演示单文件输出，你可按模型结果拆多文件
         return jsonify({
             "success": True,
             "message": "ok",
@@ -104,4 +111,4 @@ def completion():
         }), 200
 
 if __name__ == '__main__':
-    app.run(debug=True, port=1234, threaded=True)
+    app.run(debug=False, port=1234, threaded=True)
