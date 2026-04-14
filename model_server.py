@@ -154,6 +154,7 @@ def completion():
 
 def start_cloudflare_tunnel(port: int) -> None:
     """Start a cloudflared tunnel and print the public URL."""
+    import os
     import shutil
     import subprocess
     import threading
