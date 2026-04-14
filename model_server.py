@@ -52,13 +52,14 @@ def tokenize(text):
 
 def generate(
         text: str,
-        max_tokens: int = 256,
+        max_tokens: int = 512,
         temperature: float = 0.6,
         ):
     generation_config = GenerationConfig(
+            do_sample=True,
             temperature=temperature,
-            do_sample=False,       # greedy decoding: faster + more deterministic
-            repetition_penalty=1.1,
+            top_p=0.9,
+            repetition_penalty=1.3,
             eos_token_id=2,
             pad_token_id=0,
             )
