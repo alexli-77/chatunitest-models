@@ -20,7 +20,7 @@ model = LlamaForCausalLM.from_pretrained(
 
 model = PeftModel.from_pretrained(
     model,
-	"zzzghttt/TestGen2-lora",
+    "Leon-20292783/my-testgen-lora",
     torch_dtype=torch.float16,
 )
 
