@@ -5,7 +5,7 @@ from peft import PeftModel
 
 app = Flask(__name__)
 
-device = "mps" if torch.backends.mps.is_available() else "cpu"
+device = "cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu")
 BASE_MODEL = "codellama/CodeLlama-7b-Instruct-hf"
 
 tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL)
