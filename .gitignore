@@ -1,0 +1,12 @@
+# Model training outputs
+my-testgen-lora/
+*.bin
+*.safetensors
+*.pt
+*.ckpt
+
+# Data
+data/
+__pycache__/
+*.pyc
+.DS_Store
