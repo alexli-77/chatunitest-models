@@ -159,13 +159,14 @@ def start_cloudflare_tunnel(port: int) -> None:
     import threading
     import re
 
-    if not shutil.which("cloudflared"):
-        print("[tunnel] cloudflared not found, skipping tunnel. Install with: pip install cloudflared")
+    binary = shutil.which("cloudflared") or os.path.expanduser("~/cloudflared")
+    if not os.path.isfile(binary):
+        print("[tunnel] cloudflared not found. Run: curl -L https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -o ~/cloudflared && chmod +x ~/cloudflared")
         return
 
     def _run():
         proc = subprocess.Popen(
-            ["cloudflared", "tunnel", "--url", f"http://localhost:{port}"],
+            [binary, "tunnel", "--url", f"http://localhost:{port}"],
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             text=True,
