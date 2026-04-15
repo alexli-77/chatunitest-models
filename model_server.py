@@ -125,6 +125,25 @@ def completion():
         output_tokens = len(generated_ids)
         result = tokenizer.decode(generated_ids, skip_special_tokens=True)
 
+        # Post-process: wrap in class if missing
+        if result.strip() and "public class" not in result:
+            # Extract only the @Test methods, discard trailing variable declarations
+            import re
+            test_methods = re.findall(
+                r'(@Test\s+public\s+void\s+\w+[^@]*?(?=@Test|\Z))',
+                result,
+                re.DOTALL,
+            )
+            body = "\n\n".join(m.strip() for m in test_methods) if test_methods else result.strip()
+            result = (
+                "package se.kth.castor.generated;\n\n"
+                "import org.junit.jupiter.api.Test;\n"
+                "import static org.junit.jupiter.api.Assertions.*;\n\n"
+                "public class HybridRockyTest {\n\n"
+                f"{body}\n\n"
+                "}"
+            )
+
         stats["success_count"] += 1
         stats["total_inference_time_ms"] += inference_time_ms
         stats["total_tokens_generated"] += output_tokens
