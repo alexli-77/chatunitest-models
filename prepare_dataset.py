@@ -34,9 +34,24 @@ def build_prompt(context: str) -> str:
     return PROMPT_TEMPLATE.format(context=context.strip())
 
 
+def wrap_test_in_class(test: str) -> str:
+    """如果测试代码没有类定义，加上完整的类包装"""
+    test = test.strip()
+    if "public class" in test:
+        return test
+    return (
+        "package se.kth.castor.generated;\n\n"
+        "import org.junit.jupiter.api.Test;\n"
+        "import static org.junit.jupiter.api.Assertions.*;\n\n"
+        "public class HybridRockyTest {\n\n"
+        f"{test}\n\n"
+        "}"
+    )
+
+
 def build_full_sample(context: str, test: str) -> str:
     """训练时 input + output 拼接成一条完整序列"""
-    return build_prompt(context) + test.strip()
+    return build_prompt(context) + wrap_test_in_class(test)
 
 
 def has_assertion(test: str) -> bool:
@@ -46,8 +61,8 @@ def has_assertion(test: str) -> bool:
 
 
 def is_valid_java(code: str) -> bool:
-    """简单结构校验：括号基本匹配"""
-    return code.count("{") > 0 and abs(code.count("{") - code.count("}")) <= 2
+    """简单结构校验：有括号且基本匹配（加类包装后会多2个括号）"""
+    return code.count("{") > 0 and abs(code.count("{") - code.count("}")) <= 4
 
 
 def estimate_tokens(text: str) -> int:
