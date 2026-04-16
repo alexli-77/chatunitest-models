@@ -40,6 +40,55 @@ model = PeftModel.from_pretrained(
 
 model.eval()
 
+import json as _json
+import re as _re
+
+def _format_static_snapshot(raw: str) -> str:
+    """Convert staticSnapshot JSON into plain Java source text matching training format."""
+    if not raw:
+        return ""
+    try:
+        snapshot = _json.loads(raw)
+    except Exception:
+        return raw  # already plain text, pass through
+    parts = []
+    for method in snapshot.get("methods", []):
+        snippet = method.get("sourceSnippet", "").strip()
+        if snippet:
+            parts.append(snippet)
+    return "\n\n".join(parts) if parts else raw
+
+
+def _format_runtime_facts(raw: str) -> str:
+    """Convert runtimeFacts JSON into readable comments matching training format.
+
+    Training data had empty runtimeFacts. For runtime-grounded condition we add
+    a compact comment block so the model can see real values without format shock.
+    """
+    if not raw:
+        return ""
+    try:
+        facts = _json.loads(raw)
+    except Exception:
+        return raw
+    methods = facts.get("methods", [])
+    if not methods:
+        return ""
+    lines = []
+    for m in methods:
+        mid = m.get("methodId", "")
+        ret_vals = m.get("returnedValues") or []
+        param_vals = m.get("parameterValues") or []
+        if ret_vals or param_vals:
+            lines.append(f"// Runtime observations for {mid.split('#')[-1]}:")
+            if ret_vals:
+                lines.append(f"//   returned: {', '.join(str(v) for v in ret_vals[:3])}")
+            if param_vals:
+                sample = param_vals[0]
+                lines.append(f"//   params:   {', '.join(str(v) for v in sample[:5])}")
+    return "\n".join(lines)
+
+
 def tokenize(text):
     result = tokenizer(
         text,
@@ -103,15 +152,27 @@ def completion():
             mode = data.get('mode', 'UNKNOWN')
             project_path = data.get('projectPath', '')
             assertion_style = data.get('assertionStyle', 'JUNIT')
-            static_snapshot = data.get('staticSnapshot', '')
-            runtime_facts = data.get('runtimeFacts', '')
+            static_snapshot_raw = data.get('staticSnapshot', '')
+            runtime_facts_raw = data.get('runtimeFacts', '')
 
+            # --- Format staticSnapshot ---
+            # Training data used plain Java source code; inference sends JSON.
+            # Extract sourceSnippet fields so the prompt matches training format.
+            static_text = _format_static_snapshot(static_snapshot_raw)
+
+            # --- Format runtimeFacts ---
+            # Training data had empty runtimeFacts; for runtime-grounded condition
+            # we summarise real values as readable comments so the model can use them.
+            runtime_text = _format_runtime_facts(runtime_facts_raw)
+
+            # Always use mode=COMPLETION to match training format exactly.
             prompt = (
-                f"mode={mode}\n"
+                f"mode=COMPLETION\n"
                 f"projectPath={project_path}\n"
                 f"assertionStyle={assertion_style}\n"
-                f"staticSnapshot:\n{static_snapshot}\n"
-                f"runtimeFacts:\n{runtime_facts}\n"
+                f"staticSnapshot:\n{static_text}\n"
+                f"runtimeFacts:\n{runtime_text}\n"
+                f"### JUnit Test:\n"
             )
 
         input_ids = tokenizer(prompt, return_tensors="pt")["input_ids"]
