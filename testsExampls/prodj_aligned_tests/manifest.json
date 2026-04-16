@@ -1,0 +1,722 @@
+{
+  "endpoint": "https://medications-walnut-carbon-platform.trycloudflare.com/generation",
+  "mode": "HYBRID_DYNAMIC",
+  "projectPath": "pdfbox",
+  "dataPath": "pdfbox_dataset",
+  "methodsRequested": 79,
+  "methodsSucceeded": 79,
+  "methodsFailed": 0,
+  "results": [
+    {
+      "methodId": "org.apache.fontbox.cmap.CMap#readCode(java.io.InputStream)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.fontbox.cmap.CMap_readCode_java.io.InputStream___f40510dcdc/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.fontbox.cmap.CMap#toCID(int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.fontbox.cmap.CMap_toCID_int___72688bd599/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.fontbox.cmap.CMap#toCID(int,int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.fontbox.cmap.CMap_toCID_int_int___252a54b4bf/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.fontbox.cmap.CMapParser#parse(org.apache.pdfbox.io.RandomAccessRead)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.fontbox.cmap.CMapParser_parse_org.apache.pdfbox.io.RandomAccessRead___059b444fc7/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.fontbox.cmap.CodespaceRange#isFullMatch(byte[],int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.fontbox.cmap.CodespaceRange_isFullMatch_byte_int___3c0d1ddd1a/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.fontbox.ttf.CmapTable#getSubtable(int,int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.fontbox.ttf.CmapTable_getSubtable_int_int___445a605c03/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.fontbox.ttf.HorizontalMetricsTable#getLeftSideBearing(int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.fontbox.ttf.HorizontalMetricsTable_getLeftSideBearing_int___b00da2cfb9/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.fontbox.ttf.NamingTable#getName(int,int,int,int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.fontbox.ttf.NamingTable_getName_int_int_int_int___f9ff96bbd0/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSArray#getInt(int,int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSArray_getInt_int_int___fa6bcf87fa/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSArray#getObject(int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSArray_getObject_int___2c3c20b192/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSArray#remove(int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSArray_remove_int___145484e345/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSArray#toFloatArray()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSArray_toFloatArray___d6d2ee11c9/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSDictionary#getBoolean(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSName,boolean)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSDictionary_getBoolean_org.apache.pdfbox.cos.COSName_org.apache.pdfbox.cos.COSName_boolean___190ba7007e/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSDictionary#getCOSArray(org.apache.pdfbox.cos.COSName)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSDictionary_getCOSArray_org.apache.pdfbox.cos.COSName___1a806052be/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSDictionary#getCOSDictionary(org.apache.pdfbox.cos.COSName)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSDictionary_getCOSDictionary_org.apache.pdfbox.cos.COSName___10eb14554a/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSDictionary#getCOSDictionary(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSName)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSDictionary_getCOSDictionary_org.apache.pdfbox.cos.COSName_org.apache.pdfbox.cos.COSName___8533781959/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSDictionary#getCOSName(org.apache.pdfbox.cos.COSName)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSDictionary_getCOSName_org.apache.pdfbox.cos.COSName___36beefaf1d/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSDictionary#getCOSName(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSName)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSDictionary_getCOSName_org.apache.pdfbox.cos.COSName_org.apache.pdfbox.cos.COSName___066ed341f6/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSDictionary#getCOSObject(org.apache.pdfbox.cos.COSName)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSDictionary_getCOSObject_org.apache.pdfbox.cos.COSName___d81032971a/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSDictionary#getCOSStream(org.apache.pdfbox.cos.COSName)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSDictionary_getCOSStream_org.apache.pdfbox.cos.COSName___2597175ef8/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSDictionary#getDictionaryObject(org.apache.pdfbox.cos.COSName)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSDictionary_getDictionaryObject_org.apache.pdfbox.cos.COSName___4308662518/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSDictionary#getDictionaryObject(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSName)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSDictionary_getDictionaryObject_org.apache.pdfbox.cos.COSName_org.apache.pdfbox.cos.COSName___514780088d/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSDictionary#getFlag(org.apache.pdfbox.cos.COSName,int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSDictionary_getFlag_org.apache.pdfbox.cos.COSName_int___c3c626c499/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSDictionary#getInt(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSName,int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSDictionary_getInt_org.apache.pdfbox.cos.COSName_org.apache.pdfbox.cos.COSName_int___5e469deb65/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSDictionary#getItem(org.apache.pdfbox.cos.COSName,org.apache.pdfbox.cos.COSName)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSDictionary_getItem_org.apache.pdfbox.cos.COSName_org.apache.pdfbox.cos.COSName___30ae34e94c/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSDictionary#getLong(org.apache.pdfbox.cos.COSName,long)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSDictionary_getLong_org.apache.pdfbox.cos.COSName_long___22950ea041/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSDictionary#getNameAsString(org.apache.pdfbox.cos.COSName)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSDictionary_getNameAsString_org.apache.pdfbox.cos.COSName___e8bc9312b4/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSName#getName()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSName_getName___89e9a3a748/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSObjectKey#equals(java.lang.Object)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSObjectKey_equals_java.lang.Object___297dbcee32/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSStream#createInputStream(org.apache.pdfbox.filter.DecodeOptions)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSStream_createInputStream_org.apache.pdfbox.filter.DecodeOptions___e4bc432de1/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSStream#createOutputStream(org.apache.pdfbox.cos.COSBase)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSStream_createOutputStream_org.apache.pdfbox.cos.COSBase___282176f85f/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSStream#createRawInputStream()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSStream_createRawInputStream___f4d0b1a595/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSStream#createView()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSStream_createView___65bd7c92b4/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSStream#getLength()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSStream_getLength___19d604718c/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.cos.COSString#getString()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.cos.COSString_getString___d731cdb5a7/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.filter.FlateFilterDecoderStream#read(byte[],int,int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.filter.FlateFilterDecoderStream_read_byte_int_int___ad233c5d49/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessInputStream#read()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessInputStream_read___03c254b535/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessInputStream#read(byte[],int,int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessInputStream_read_byte_int_int___07dc7091bf/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadBuffer#getPosition()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadBuffer_getPosition___f79c221008/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadBuffer#isEOF()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadBuffer_isEOF___5d13b5111f/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadBuffer#length()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadBuffer_length___029641d3fb/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadBuffer#read()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadBuffer_read___c9d5b7666f/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadBuffer#read(byte[],int,int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadBuffer_read_byte_int_int___ec4c40d922/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadBufferedFile#createView(long,long)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadBufferedFile_createView_long_long___6de9e7d868/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadBufferedFile#getPosition()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadBufferedFile_getPosition___1022839894/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadBufferedFile#read()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadBufferedFile_read___91901ad203/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadBufferedFile#read(byte[],int,int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadBufferedFile_read_byte_int_int___952832b9a9/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadView#close()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadView_close___8a190bf148/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadView#getPosition()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadView_getPosition___db4bc1bf6a/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadView#isEOF()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadView_isEOF___7eac4ec068/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadView#length()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadView_length___fb4ddc6434/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadView#read()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadView_read___8677f7022d/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadView#read(byte[],int,int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadView_read_byte_int_int___b37f88789d/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.io.RandomAccessReadView#seek(long)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.io.RandomAccessReadView_seek_long___9758fe1bfe/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.PDAppearanceContentStream#setStrokingColorOnDemand(org.apache.pdfbox.pdmodel.graphics.color.PDColor)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.PDAppearanceContentStream_setStrokingColorOnDemand_org.apache.pdfbox.pdmodel.graphics.color.PD__5e647ebb23/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.font.PDFontDescriptor#getFlags()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.font.PDFontDescriptor_getFlags___3a469cb6a6/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.font.PDFontDescriptor#getFontFile2()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.font.PDFontDescriptor_getFontFile2___c453dcc2ca/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.font.PDFontDescriptor#setCapHeight(float)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.font.PDFontDescriptor_setCapHeight_float___cec5cbdaea/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.font.PDFontDescriptor#setCharacterSet(java.lang.String)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.font.PDFontDescriptor_setCharacterSet_java.lang.String___36d0ebe553/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.font.PDFontDescriptor#setFlags(int)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.font.PDFontDescriptor_setFlags_int___96189333a1/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.font.PDFontDescriptor#setFontBoundingBox(org.apache.pdfbox.pdmodel.common.PDRectangle)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.font.PDFontDescriptor_setFontBoundingBox_org.apache.pdfbox.pdmodel.common.PDRectangle___6005196c68/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.font.PDFontDescriptor#setFontFamily(java.lang.String)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.font.PDFontDescriptor_setFontFamily_java.lang.String___6f626a1b98/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.font.PDFontDescriptor#setFontName(java.lang.String)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.font.PDFontDescriptor_setFontName_java.lang.String___2b5a198161/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.font.PDFontDescriptor#setXHeight(float)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.font.PDFontDescriptor_setXHeight_float___62dd6d8c8c/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.graphics.color.PDColor#getComponents()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.graphics.color.PDColor_getComponents___7dac553cab/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.graphics.form.PDFormXObject#getBBox()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.graphics.form.PDFormXObject_getBBox___84701aedee/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.graphics.form.PDFormXObject#getResources()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.graphics.form.PDFormXObject_getResources___f1208de5ca/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation#getAppearance()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation_getAppearance___68161f4bf2/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation#getBorder()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation_getBorder___d6437624bd/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation#getNormalAppearanceStream()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation_getNormalAppearanceStream___86cb90d638/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation#getOptionalContent()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation_getOptionalContent___99a7e243ca/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation#getRectangle()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation_getRectangle___f6d275d2bc/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink#getBorderStyle()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink_getBorderStyle___0e6d1032c3/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink#getQuadPoints()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink_getQuadPoints___b148c7a6db/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.interactive.annotation.PDAppearanceDictionary#getNormalAppearance()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.interactive.annotation.PDAppearanceDictionary_getNormalAppearance___7f515ac0fe/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.pdmodel.interactive.annotation.PDAppearanceEntry#getAppearanceStream()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.pdmodel.interactive.annotation.PDAppearanceEntry_getAppearanceStream___d17a211bf5/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.util.Matrix#getScalingFactorX()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.util.Matrix_getScalingFactorX___b0312d3e9c/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.util.Matrix#getScalingFactorY()",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.util.Matrix_getScalingFactorY___012e10f121/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    },
+    {
+      "methodId": "org.apache.pdfbox.util.Matrix#transformPoint(float,float)",
+      "success": true,
+      "message": "ok",
+      "writtenFiles": [
+        "/teamspace/studios/this_studio/r2t-output-prodj-aligned/org.apache.pdfbox.util.Matrix_transformPoint_float_float___be6af37a9e/se/kth/castor/generated/HybridRockyTest.java"
+      ],
+      "repaired": false
+    }
+  ]
+}
