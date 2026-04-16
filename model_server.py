@@ -186,6 +186,12 @@ def completion():
         output_tokens = len(generated_ids)
         result = tokenizer.decode(generated_ids, skip_special_tokens=True)
 
+        # Truncate at prompt bleed-through markers
+        for stop_marker in ["runtimeFacts:", "### JUnit Test:", "staticSnapshot:"]:
+            idx = result.find(stop_marker)
+            if idx != -1:
+                result = result[:idx].strip()
+
         # Post-process: wrap in class if missing
         if result.strip() and "public class" not in result:
             # Extract only the @Test methods, discard trailing variable declarations
