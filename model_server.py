@@ -192,24 +192,72 @@ def completion():
             if idx != -1:
                 result = result[:idx].strip()
 
-        # Post-process: wrap in class if missing
-        if result.strip() and "public class" not in result:
-            # Extract only the @Test methods, discard trailing variable declarations
-            import re
-            test_methods = re.findall(
-                r'(@Test\s+public\s+void\s+\w+[^@]*?(?=@Test|\Z))',
-                result,
-                re.DOTALL,
-            )
-            body = "\n\n".join(m.strip() for m in test_methods) if test_methods else result.strip()
-            result = (
-                "package se.kth.castor.generated;\n\n"
-                "import org.junit.jupiter.api.Test;\n"
-                "import static org.junit.jupiter.api.Assertions.*;\n\n"
-                "public class HybridRockyTest {\n\n"
-                f"{body}\n\n"
-                "}"
-            )
+        # Extract class name from methodId for proper naming
+        import re
+        declaring_class = "HybridRocky"
+        if 'static_snapshot_raw' in dir() or True:
+            # parse from request data
+            _mid = data.get('staticSnapshot', '')
+            _cls_match = re.search(r'"methodId"\s*:\s*"([^"#]+)#', _mid)
+            if not _cls_match:
+                # fallback: parse from already-decoded static_text
+                _cls_match = re.search(r'(?:class|interface)\s+(\w+)', static_text if 'static_text' in dir() else '')
+            if _cls_match:
+                _fqn = _cls_match.group(1)
+                declaring_class = _fqn.split('.')[-1]
+
+        # Extract only @Test method blocks, strip trailing garbage
+        # (static final fields, @BeforeEach, @AfterAll, bare variable declarations, etc.)
+        def extract_clean_test_methods(text: str) -> list[str]:
+            first = text.find("@Test")
+            if first == -1:
+                return []
+            body = text[first:]
+            # Split on @Test boundaries
+            parts = re.split(r'(?=@Test)', body)
+            methods = []
+            for part in parts:
+                part = part.strip()
+                if not part.startswith("@Test"):
+                    continue
+                if "{" not in part:
+                    continue
+                # Find the end of this method: balance braces
+                depth = 0
+                end = -1
+                in_str = False
+                for i, ch in enumerate(part):
+                    if ch == '"' and (i == 0 or part[i-1] != '\\'):
+                        in_str = not in_str
+                    if in_str:
+                        continue
+                    if ch == '{':
+                        depth += 1
+                    elif ch == '}':
+                        depth -= 1
+                        if depth == 0:
+                            end = i + 1
+                            break
+                if end != -1:
+                    methods.append(part[:end])
+                else:
+                    # unbalanced - still include but trimmed
+                    methods.append(part)
+            return methods
+
+        # Always re-extract @Test blocks to strip trailing garbage
+        # (static final fields, @BeforeEach, bare variable declarations, etc.)
+        test_methods = extract_clean_test_methods(result)
+        body = "\n\n".join(m.strip() for m in test_methods) if test_methods else result.strip()
+
+        result = (
+            f"package se.kth.castor.generated;\n\n"
+            f"import org.junit.jupiter.api.Test;\n"
+            f"import static org.junit.jupiter.api.Assertions.*;\n\n"
+            f"public class {declaring_class}RockyTest {{\n\n"
+            f"{body}\n\n"
+            f"}}"
+        )
 
         stats["success_count"] += 1
         stats["total_inference_time_ms"] += inference_time_ms
@@ -225,7 +273,7 @@ def completion():
             },
             "files": [
                 {
-                    "relativePath": "se/kth/castor/generated/HybridRockyTest.java",
+                    "relativePath": f"se/kth/castor/generated/{declaring_class}RockyTest.java",
                     "content": result
                 }
             ]
